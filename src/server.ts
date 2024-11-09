@@ -1,9 +1,5 @@
 function welcom(name: string) {
-  const user = {
-    lastName: 'Raj',
-  };
-
-  return name + user.lastName;
+  return name;
 }
 
 welcom('Rahul');
