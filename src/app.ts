@@ -3,6 +3,12 @@ import { HttpError } from 'http-errors';
 import logger from './config/logger';
 const app = express();
 
+app.get('/', (req: Request, res: Response) => {
+  res.status(200).json({
+    data: 'Welcome to Pizza Delivery Service!',
+  });
+});
+
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 app.use((err: HttpError, req: Request, res: Response, next: NextFunction) => {
   logger.error(err.message);
