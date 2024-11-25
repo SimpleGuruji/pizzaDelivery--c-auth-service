@@ -4,10 +4,14 @@ import logger from './config/logger';
 const app = express();
 
 app.get('/', (req: Request, res: Response) => {
-  res.status(200).json({
+  res.status(201).json({
     data: 'Welcome to Pizza Delivery Service!',
   });
 });
+
+import authRouter from './routes/auth.routes';
+
+app.use('/auth', authRouter);
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 app.use((err: HttpError, req: Request, res: Response, next: NextFunction) => {
